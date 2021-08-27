@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Crud</h1>
+        <div class="d-flex">
+            <button (click)="clickLogin()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Login</button>
+        </div>
+    </div>
+</nav>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="loginForm">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':loginForm.get('email')?.touched && loginForm.get('email')?.invalid}">
+                  <div class="invalid-feedback" *ngIf="f.email.touched && f.email.invalid">
+                    <small class="text-danger" *ngIf="f.email.errors?.required">
+                      Email is required
+                    </small>
+                    <small class="text-danger" *ngIf="f.email.errors?.email">
+                      Email must be valid
+                    </small>  
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid':loginForm.get('password')?.touched && loginForm.get('password')?.invalid}">
+                  <div class="invalid-feedback" *ngIf="f.password.touched && f.password.invalid">
+                    <small class="text-danger" *ngIf="f.password.errors?.required">
+                      Password is required
+                    </small>
+                    <small class="text-danger" *ngIf="f.password.errors?.minLength">
+                      Password is required minLength(6)
+                    </small>   
+                  </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="loginUser()" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+          <li class="breadcrumb-item"><a href="/register">Register</a></li>
+        </div>
+        <!-- <div class = 'col-md-4 offset-4 mt-5' *ngIf = 'this.isLogin'>
+          <h1>You are logged in</h1>
+          <button class = 'btn btn-outline-info' (click) = 'logout()'>Log-out</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

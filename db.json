@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Abrar",
+      "lastName": "Hossain",
+      "email": "abrar12@gmail.com",
+      "mobile": "01711111111",
+      "salary": "40,000"
+    },
+    {
+      "id": 2,
+      "firstName": "Asif",
+      "lastName": "Iqbal",
+      "email": "asif45@gmail.com",
+      "mobile": "01711111112",
+      "salary": "30,000"
+    },
+    {
+      "id": 3,
+      "firstName": "ashik",
+      "lastName": "Rayhan",
+      "email": "rayhan@gmail.com ",
+      "mobile": "01711111115",
+      "salary": "40,000"
+    },
+    {
+      "id": 4,
+      "firstName": "Abu Bakkar ",
+      "lastName": "Sakib ",
+      "email": "sakib78@gmail.com ",
+      "mobile": "01711111116",
+      "salary": "30,000"
+    },
+    {
+      "id": 5,
+      "firstName": "Iqbal",
+      "lastName": "Shaikat",
+      "email": "iqbal@gmail.com",
+      "mobile": "01711111118",
+      "salary": "20,000"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "tayef@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "email": "sanzid.tayef@gmail.com",
+      "password": "tayef786"
+    },
+    {
+      "email": "asif56@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "abrar12@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "email": "iqbal78@gmail.com",
+      "password": "1234567",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

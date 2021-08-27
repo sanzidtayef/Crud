@@ -1,0 +1,60 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+      <h1 style="color: aliceblue;">Crud</h1>
+      <div class="d-flex">
+          <button (click)="clickSignin()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">SignIn</button>
+      </div>
+  </div>
+</nav>
+ <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">SIGNIN</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="signinForm">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="text" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid':signinForm.get('email')?.touched && signinForm.get('email')?.invalid}">
+                  <div class="invalid-feedback" *ngIf="f.email.touched && f.email.invalid">
+                    <small class="text-danger" *ngIf="f.email.errors?.required">
+                      Email is required
+                    </small>  
+                    <small class="text-danger" *ngIf="f.email.errors?.email">
+                      Email is must be valid
+                    </small> 
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{'is-invalid':signinForm.get('password')?.touched && signinForm.get('password')?.invalid}">
+                  <div class="invalid-feedback" *ngIf="f.password.touched && f.password.invalid">
+                    <small class="text-danger" *ngIf="f.password.errors?.required">
+                      Password is required
+                    </small> 
+                    <small class="text-danger" *ngIf="f.password.errors?.minLength">
+                      Password is required minLength(6)
+                    </small> 
+                  </div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="text" class="form-control" formControlName="confirmpassword" [ngClass]="{'is-invalid':signinForm.get('confirmpassword')?.touched && signinForm.get('confirmpassword')?.invalid}">
+                    <div class="invalid-feedback" *ngIf="f.confirmpassword.touched && f.confirmpassword.invalid">
+                      <small class="text-danger" *ngIf="f.confirmpassword.errors?.required">
+                        Confirm Password is required
+                      </small>  
+                    </div>
+                </div> -->
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="onSignin()" [disabled]="signinForm.invalid" class="btn btn-primary">SignIn</button>
+          <!-- <li class="breadcrumb-item"><a href="/">Login</a></li> -->
+        </div>
+      </div>
+    </div>
+  </div>
